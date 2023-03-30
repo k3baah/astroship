@@ -8,18 +8,6 @@ import Hero from "@components/hero.astro";
 import Layout from "@layouts/Layout.astro";
 import LatestPosts from "@components/LatestPosts.astro";
 import ConvertKitForm from './ConvertKitForm.astro';
-const formId = 'f31846715d';
----
-
-
-
-
-// Fetch the latest 3 blog posts
-const blogEntries = await getCollection('blog', { 
-  limit: 3, 
-  sort: { field: 'data.publishDate', order: 'desc' },
-  filter: ({ data }) => !data.draft && data.publishDate < new Date()
-});
 ---
 
 <Layout title="">
