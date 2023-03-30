@@ -6,7 +6,7 @@ const { posts } = Astro.props;
 <section class="my-12">
     <h2 class="text-3xl font-semibold text-center mb-8">Latest Blog Posts</h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    {posts.map(post => (
+    {posts.slice(0, 3).map(post => (
       <PostPreview key={post.slug} post={post} />
     ))}
   </div>
