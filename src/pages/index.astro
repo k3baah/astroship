@@ -7,6 +7,11 @@ import Footer from "@components/footer.astro";
 import Hero from "@components/hero.astro";
 import Layout from "@layouts/Layout.astro";
 import LatestPosts from "@components/LatestPosts.astro";
+import ConvertKitForm from './ConvertKitForm.astro';
+const formJS = 'async data-uid="f31846715d" src="https://kofi-baah.ck.page/f31846715d/index.js"><';
+---
+
+
 
 
 // Fetch the latest 3 blog posts
@@ -23,7 +28,8 @@ const blogEntries = await getCollection('blog', {
     <!-- show latest posts -->
     <LatestPosts posts={blogEntries} />
     <!--<Features />
-    <Logos />-->
-    <Cta />
+    <Logos />
+    <Cta />-->
+    <ConvertKitForm formJS={formJS} />
   </Container>
 </Layout>
