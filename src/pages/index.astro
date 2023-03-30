@@ -8,7 +8,7 @@ import Hero from "@components/hero.astro";
 import Layout from "@layouts/Layout.astro";
 import LatestPosts from "@components/LatestPosts.astro";
 import ConvertKitForm from './ConvertKitForm.astro';
-const formJS = 'async data-uid="f31846715d" src="https://kofi-baah.ck.page/f31846715d/index.js"><';
+const formId = 'f31846715d';
 ---
 
 
@@ -30,6 +30,6 @@ const blogEntries = await getCollection('blog', {
     <!--<Features />
     <Logos />
     <Cta />-->
-    <ConvertKitForm formJS={formJS} />
+    <ConvertKitForm formId={formId} />
   </Container>
 </Layout>

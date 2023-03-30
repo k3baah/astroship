@@ -1,5 +1,13 @@
 ---
-const { formJS } = Astro.props;
+const { formId } = Astro.props;
 ---
 
-<script innerHTML={formJS}></script>
+<div id="convertkit-form-container"></div>
+
+<script client:load>
+  const container = document.getElementById('convertkit-form-container');
+  container.innerHTML = `
+    <script async data-uid="${formId}" src="https://f.convertkit.com/${formId}/f31846715d/index.js">
+    </script>
+  `;
+</script>
