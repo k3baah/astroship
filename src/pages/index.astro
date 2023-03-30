@@ -8,7 +8,12 @@ import Hero from "@components/hero.astro";
 import Layout from "@layouts/Layout.astro";
 
 // Fetch the latest 3 blog posts
-const blogEntries = await getCollection('blog', { limit: 3 });
+const blogEntries = await getCollection('blog', { 
+  limit: 3, 
+  sort: { field: 'data.publishDate', order: 'desc' },
+  filter: ({ data }) => !data.draft && data.publishDate < new Date()
+});
+---
 
 // Add this import line
 import LatestPosts from "@components/LatestPosts.astro";
