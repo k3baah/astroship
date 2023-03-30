@@ -1,12 +1,19 @@
 ---
+import { getCollection } from 'astro:content';
 import PostPreview from './PostPreview.astro';
-const { posts } = Astro.props;
+
+// Fetch the latest 3 blog posts
+const blogEntries = await getCollection('blog', { 
+  limit: 3, 
+  sort: { field: 'data.publishDate', order: 'desc' },
+  filter: ({ data }) => !data.draft && data.publishDate < new Date()
+});
 ---
 
 <section class="my-12">
     <h2 class="text-3xl font-semibold text-center mb-8">Latest Blog Posts</h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    {posts.slice(0, 3).map(post => (
+    {blogEntries.map(post => (
       <PostPreview key={post.slug} post={post} />
     ))}
   </div>
