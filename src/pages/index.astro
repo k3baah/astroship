@@ -6,6 +6,8 @@ import Features from "@components/features.astro";
 import Footer from "@components/footer.astro";
 import Hero from "@components/hero.astro";
 import Layout from "@layouts/Layout.astro";
+import LatestPosts from "@components/LatestPosts.astro";
+
 
 // Fetch the latest 3 blog posts
 const blogEntries = await getCollection('blog', { 
