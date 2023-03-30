@@ -3,11 +3,11 @@ import { getCollection } from 'astro:content';
 import PostPreview from './PostPreview.astro';
 
 // Fetch the latest 3 blog posts
-const blogEntries = await getCollection('blog', { 
-  limit: 3, 
+const blogEntries = (await getCollection('blog', { 
   sort: { field: 'data.publishDate', order: 'desc' },
   filter: ({ data }) => !data.draft && data.publishDate < new Date()
-});
+})).slice(0, 3);
+
 ---
 
 <section class="my-12">
