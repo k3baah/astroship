@@ -1,13 +1,15 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon";
+import customIcon from "src/assets/anthropic-ai-logo-vector.svg"
 ---
 
 <div class="mt-24">
-  <h2 class="text-center text-slate-500">Works with your technologies</h2>
+  <h2 class="text-center text-slate-500">Get started with tools from the top AI companies.</h2>
   <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-    <Icon class="h-8 md:h-12" name="simple-icons:react" />
-    <Icon class="h-8 md:h-12" name="simple-icons:svelte" />
+    <Icon class="h-8 md:h-12" name="simple-icons:openai" />
+    <Icon class="h-8 md:h-12" name="simple-icons:google" />
+    <img src={customIcon} alt="Custom Icon" class="h-8 md:h-16" />
     <Icon class="h-8 md:h-14" name="simple-icons:tailwindcss" />
     <Icon class="h-8 md:h-16" name="simple-icons:alpinedotjs" />
     <Icon class="h-8 md:h-12" name="simple-icons:vercel" />
