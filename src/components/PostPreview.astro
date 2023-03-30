@@ -1,0 +1,8 @@
+---
+const { post } = Astro.props;
+---
+
+<article class="rounded-md shadow-lg overflow-hidden">
+  <img src={post.data.thumbnail} alt={post.data.title} class="w-full h-48 object-cover" />
+  <div class="p-4">
+    <h3 class="text-xl font-bold">{post.data

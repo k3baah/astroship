@@ -1,18 +1,27 @@
 ---
+import { getCollection } from 'astro:content';
 import Container from "@components/container.astro";
 import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
 import Footer from "@components/footer.astro";
 import Hero from "@components/hero.astro";
-import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
+
+// Fetch the latest 3 blog posts
+const blogEntries = await getCollection('blog', { limit: 3 });
+
+// Add this import line
+import LatestPosts from "@components/LatestPosts.astro";
 ---
+
 
 <Layout title="">
   <Container>
     <Hero />
-    <!--<Features />-->
-    <Logos />
+    <!-- show latest posts -->
+    <LatestPosts posts={blogEntries} />
+    <!--<Features />
+    <Logos />-->
     <Cta />
   </Container>
 </Layout>

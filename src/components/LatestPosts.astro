@@ -1,0 +1,13 @@
+---
+import PostPreview from './PostPreview.astro';
+const { posts } = Astro.props;
+---
+
+<section class="my-12">
+  <h2 class="text-center text-slate-500 mb-6">Latest Blog Posts</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {posts.map(post => (
+      <PostPreview key={post.slug} post={post} />
+    ))}
+  </div>
+</section>
